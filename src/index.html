@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>vacs</title>
+    <link rel="shortcut icon" href="assets/images/icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="group">
+            <a href="/">
+                <img src="assets/images/icon.png" alt="Logo" height="52" width="52">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="https://github.com/MorpheusXAUT/vacs">GitHub</a></li>
+                    <li><a href="https://discord.gg/yu2nyCKU3R">Discord</a></li>
+                    <li>
+                        <a
+                            href="https://github.com/MorpheusXAUT/vacs?tab=readme-ov-file#privacy--data-handling">Privacy</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <iframe title="vacs Status" src="https://status.vacs.network/embed-badges/live-status?align=end" width="190"
+            height="30" loading="lazy"></iframe>
+    </header>
+    <main>
+        <div>
+            <div class="title">
+                <p>vacs</p>
+                <p onclick="play()" onmouseover="playDelayed()" onmouseout="cancelTimeout()">/vɐks/</p>
+            </div>
+            <p class="desc">
+                ...is an open-source, cross-platform <b>Ground-To-Ground</b><br>
+                Voice Communication System for VATSIM.
+            </p>
+            <div class="download">
+                <div class="button">
+                    <p id="download-button">Download latest</p>
+                    <div class="select" data-open="false" onclick="this.dataset.open = this.dataset.open !== 'true'">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-chevron-down-icon lucide-chevron-down">
+                            <path d="m6 9 6 6 6-6" />
+                        </svg>
+                        <div class="dropdown">
+                            <p onclick="download('windows')">Windows</p>
+                            <p onclick="download('linux-rpm')">Linux rpm</p>
+                            <p onclick="download('linux-deb')">Linux deb</p>
+                            <p onclick="download('macos-silicon')">Apple Silicon</p>
+                            <p onclick="download('macos-intel')">Apple Intel</p>
+                        </div>
+                    </div>
+                </div>
+                <a class="changelog" href="https://github.com/MorpheusXAUT/vacs/releases/latest">Changelog</a>
+            </div>
+        </div>
+        <img src="assets/images/screenshot.png" alt="vacs Screenshot" height="753" width="1000">
+    </main>
+    <script src="assets/script.js"></script>
+</body>
+
+</html>

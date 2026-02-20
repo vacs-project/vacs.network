@@ -1,0 +1,313 @@
+@font-face {
+    font-display: swap;
+    font-family: "Noto Sans Mono";
+    font-style: normal;
+    font-weight: auto;
+    src: url("fonts/NotoSansMono-VariableFont_wdth,wght.ttf") format("truetype");
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+iframe {
+    border: none;
+    overflow: hidden;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+
+    background-color: #0f0f0f;
+    color: white;
+
+    font-family: "Noto Sans Mono", monospace;
+    font-synthesis: none;
+    user-select: none;
+}
+
+header {
+    width: 75vw;
+    margin: auto;
+
+    padding-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .group {
+        display: flex;
+        align-items: center;
+        gap: 4rem;
+    }
+
+    nav {
+        align-items: center;
+
+        ul {
+            display: flex;
+            gap: 2rem;
+
+            li {
+                color: #efefef;
+                display: inline-block;
+                list-style-type: none;
+
+                /* font-size: 1.125rem; */
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+main {
+    margin-top: 24vh;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 6rem;
+    margin-right: 12.5vw;
+
+    > div {
+        margin-left: 12.5vw;
+
+        .title {
+            display: flex;
+            align-items: baseline;
+            gap: 0.75rem;
+
+            :first-child {
+                font-size: 4rem;
+                font-weight: 700;
+            }
+
+            :last-child {
+                font-size: 1.5rem;
+                font-weight: 500;
+                cursor: pointer;
+            }
+
+            :last-child::after {
+                display: grid;
+                content: "";
+                height: 1px;
+                width: 0;
+                background-color: white;
+                transition: width 250ms ease-in-out;
+            }
+
+            :last-child:hover::after {
+                width: 100%;
+            }
+        }
+
+        .desc {
+            padding: 1rem 0 2rem 0;
+            color: #dedede;
+            white-space: nowrap;
+        }
+
+        .download {
+            width: min-content;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+
+            .button {
+                display: flex;
+
+                > p {
+                    display: block;
+                    width: min-content;
+
+                    font-size: 1.125rem;
+                    font-weight: 600;
+
+                    color: white;
+                    background-color: #0e4091;
+
+                    padding: 0.5rem 1.75rem;
+
+                    border-radius: 0.25rem 0 0 0.25rem;
+                    border: 2px solid #0c3578;
+
+                    cursor: pointer;
+                    white-space: nowrap;
+                }
+
+                .select {
+                    position: relative;
+                    background-color: #0e4091;
+                    border-radius: 0 0.25rem 0.25rem 0;
+                    border: 2px solid #0c3578;
+                    border-left: none;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    cursor: pointer;
+
+                    padding: 0 0.5rem;
+
+                    > svg {
+                        transition: transform 200ms ease-in-out;
+                    }
+
+                    .dropdown {
+                        max-height: 0;
+                        opacity: 0;
+                        overflow: hidden;
+                        position: absolute;
+                        left: 0;
+                        top: 2.75rem;
+                        display: flex;
+                        flex-direction: column;
+
+                        border: 2px solid #0c3578;
+                        background-color: #0e4091;
+                        border-radius: 0.25rem;
+
+                        transition: max-height 250ms ease-in-out;
+
+                        p {
+                            white-space: nowrap;
+                            padding: 0.5rem 0.5rem;
+                            border-bottom: 2px solid #0c3578;
+                            font-size: 1.125rem;
+                            font-weight: 600;
+                        }
+
+                        p:last-child {
+                            border-bottom: none;
+                        }
+                    }
+                }
+
+                .select[data-open="true"] {
+                    svg {
+                        transform: rotate(180deg);
+                    }
+
+                    .dropdown {
+                        max-height: 20rem;
+                        opacity: 1;
+                    }
+                }
+            }
+
+            .changelog {
+                display: block;
+                color: #efefef;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    img {
+        animation: fadein 700ms ease-in-out;
+        transform: translate(0rem, -8rem);
+        border-radius: 0.5rem;
+
+        user-select: none;
+        -webkit-user-drag: none;
+        -moz-window-dragging: no-drag;
+    }
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+        transform: translate(0rem, -7rem);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0rem, -8rem);
+    }
+}
+
+@media (max-height: 1000px) {
+    main {
+        margin-top: 20vh;
+    }
+}
+
+@media (max-width: 960px) {
+    header {
+        position: relative;
+
+        .group {
+            width: 100%;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        nav > ul {
+            gap: 0.75rem;
+        }
+
+        iframe {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            transform: translateY(100%);
+        }
+    }
+
+    main {
+        overflow: clip;
+        margin-top: 10vh;
+        display: block;
+        margin-right: 0;
+
+        > div {
+            margin-left: none;
+            width: 75vw;
+            margin: auto;
+
+            .title {
+                justify-content: center;
+            }
+
+            .desc {
+                text-align: center;
+                white-space: wrap !important;
+            }
+
+            .download {
+                margin: auto;
+                flex-direction: column;
+                gap: 0.5rem;
+
+                .button .select .dropdown {
+                    left: auto;
+                    right: -2px;
+                }
+            }
+        }
+
+        img {
+            margin-top: 4rem;
+            margin-left: 12.5vw;
+            transform: none;
+        }
+    }
+
+    @keyframes fadein {
+        from {
+            opacity: 0;
+            transform: translate(0rem, 1rem);
+        }
+        to {
+            opacity: 1;
+            transform: translate(0rem, 0rem);
+        }
+    }
+}
