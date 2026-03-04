@@ -28,7 +28,7 @@ function cancelTimeout() {
 }
 
 async function fetchDownloadLinks() {
-    const res = await fetch("https://api.github.com/repos/MorpheusXAUT/vacs/releases/latest", {
+    const res = await fetch("https://api.github.com/repos/vacs-project/vacs/releases/latest", {
         headers: { Accept: "application/vnd.github+json" },
     });
     if (!res.ok) return;
@@ -47,7 +47,7 @@ async function fetchDownloadLinks() {
 fetchDownloadLinks();
 
 function download(target) {
-    const downloadLink = downloadLinks[target] ?? "https://github.com/MorpheusXAUT/vacs/releases/latest";
+    const downloadLink = downloadLinks[target] ?? "https://github.com/vacs-project/vacs/releases/latest";
     document.location = downloadLink;
 }
 
