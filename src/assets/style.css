@@ -222,6 +222,22 @@ main {
     }
 }
 
+footer {
+    position: fixed;
+    bottom: 1rem;
+    left: 12.5vw;
+
+    display: flex;
+    gap: 1.5rem;
+
+    font-size: 0.8rem;
+    color: #888;
+
+    a:hover {
+        color: #ccc;
+    }
+}
+
 @keyframes fadein {
     from {
         opacity: 0;
@@ -240,6 +256,11 @@ main {
 }
 
 @media (max-width: 960px) {
+    /* body {
+        height: auto;
+        overflow: auto;
+    } */
+
     header {
         position: relative;
 
@@ -298,6 +319,13 @@ main {
             margin-left: 12.5vw;
             transform: none;
         }
+    }
+
+    footer {
+        position: static;
+        transform: none;
+        justify-content: center;
+        padding: 2rem 0;
     }
 
     @keyframes fadein {
