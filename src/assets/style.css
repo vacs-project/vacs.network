@@ -224,7 +224,7 @@ main {
 
 footer {
     position: fixed;
-    bottom: 1rem;
+    bottom: 2rem;
     left: 12.5vw;
 
     display: flex;
@@ -262,6 +262,7 @@ footer {
     } */
 
     header {
+        width: 85vw;
         position: relative;
 
         .group {
