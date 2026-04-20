@@ -256,10 +256,10 @@ footer {
 }
 
 @media (max-width: 960px) {
-    /* body {
+    body {
         height: auto;
         overflow: auto;
-    } */
+    }
 
     header {
         width: 85vw;
@@ -326,7 +326,9 @@ footer {
         position: static;
         transform: none;
         justify-content: center;
-        padding: 2rem 0;
+        flex-wrap: wrap;
+        padding: 2rem 1.5rem;
+        gap: 1rem;
     }
 
     @keyframes fadein {
