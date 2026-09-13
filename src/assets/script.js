@@ -6,6 +6,7 @@ const files = Object.entries({
     windows: "_x64-setup.exe",
     "linux-rpm": ".x86_64.rpm",
     "linux-deb": "_amd64.deb",
+    "linux-appimage": "_amd64.AppImage",
     "macos-silicon": "_aarch64.dmg",
     "macos-intel": "_x64.dmg",
 });
@@ -77,6 +78,6 @@ async function detectPlatform() {
         return "macos-silicon";
     }
     if (/Win/.test(p) || /Windows/.test(ua)) return "windows";
-    if (/Linux/.test(p) || /Linux/.test(ua)) return "linux-deb"; // default to deb; user can pick rpm
+    if (/Linux/.test(p) || /Linux/.test(ua)) return "linux-appimage";
     return null;
 }
